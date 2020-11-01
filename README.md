@@ -7,3 +7,9 @@
 # 安装 nodemon (node 热更新)
 
 `cnpm install nodemon --global`
+
+# 连接 MongoDB
+
+1. `cnpm install mongoose --save`
+2. `const mongoose = require('mongoose');`
+3. `mongoose.connect('mongodb://root:root@localhost:27017/koa-restful-api').then(() => { console.log('Mongodb Connected...'); }).catch((err) => { console.log(err); });`
