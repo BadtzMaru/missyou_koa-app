@@ -13,3 +13,15 @@
 1. `cnpm install mongoose --save`
 2. `const mongoose = require('mongoose');`
 3. `mongoose.connect('mongodb://root:root@localhost:27017/koa-restful-api').then(() => { console.log('Mongodb Connected...'); }).catch((err) => { console.log(err); });`
+
+# 安装字段解析包
+
+`cnpm install koa-bodyparser --save`
+
+# bcryptjs 密码加密
+
+`cnpm install bcryptjs --save`
+
+# 全球公认头像
+
+`cnpm install gravatar --save`

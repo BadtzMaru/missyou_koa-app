@@ -1,22 +1,32 @@
 const koa = require('koa');
 const Router = require('koa-router');
 const mongoose = require('mongoose');
+const bodyParser = require('koa-bodyparser');
 
 // 实例化koa
 const app = new koa();
 const router = new Router();
 
+app.use(bodyParser());
+
 // 引入users.js
 const users = require('./routes/api/users');
+const { body } = require('koa/lib/response');
 
 // 路由
 router.get('/', async (ctx) => {
 	ctx.body = { msg: 'Hello Koa Interface' };
 });
 
+// config
+const db = require('./config/keys').mongoURL;
+
 // 连接数据库
 mongoose
-	.connect('mongodb://root:root@localhost:27017/koa-restful-api')
+	.connect(db, {
+		useNewUrlParser: true,
+		useUnifiedTopology: true,
+	})
 	.then(() => {
 		console.log('Mongodb Connected...');
 	})
