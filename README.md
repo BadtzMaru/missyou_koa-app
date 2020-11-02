@@ -25,3 +25,16 @@
 # 全球公认头像
 
 `cnpm install gravatar --save`
+
+# token
+
+`cnpm install jsonwebtoken --save`
+
+# 校验 token
+
+`cnpm install koa-passport --save-dev`
+`cnpm install passort-jwt --save-dev`
+
+# 后端字段验证
+
+`cnpm install validator --save`
