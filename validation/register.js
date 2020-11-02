@@ -13,16 +13,16 @@ module.exports = function validateRegisterInput(data) {
 	if (Validator.isEmpty(data.name)) {
 		errors.name = '名字不能为空';
 	}
-	if (Validator.isEmpty(data.email)) {
-		errors.email = '邮箱不能为空';
-	}
 	if (!Validator.isEmail(data.email)) {
 		errors.email = '邮箱不合法';
+	}
+	if (Validator.isEmpty(data.email)) {
+		errors.email = '邮箱不能为空';
 	}
 	if (Validator.isEmpty(data.password)) {
 		errors.password = '密码不能为空';
 	}
-	if (Validator.isLength(data.password, { min: 6, max: 30 })) {
+	if (!Validator.isLength(data.password, { min: 6, max: 30 })) {
 		errors.password = '密码的长度不能小于6位且不能超过30位';
 	}
 	if (Validator.isEmpty(data.password2)) {

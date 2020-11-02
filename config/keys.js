@@ -1,4 +1,4 @@
 module.exports = {
-	mongoURL: 'mongodb://root:root@localhost:27017/koa-restful-api',
+	mongoURL: 'mongodb://localhost:27017/koa-restful-api',
 	secretOrKey: 'secret',
 };
