@@ -10,10 +10,10 @@ const router = new Router();
 
 app.use(bodyParser());
 
-// 引入users.js
+// 引入路由
 const users = require('./routes/api/users');
-const { body } = require('koa/lib/response');
-const { initialize } = require('koa-passport');
+const profile = require('./routes/api/profile');
+const posts = require('./routes/api/posts');
 
 // 路由
 router.get('/', async (ctx) => {
@@ -44,6 +44,8 @@ require('./config/passport')(passport);
 
 // 配置路由地址
 router.use('/api/users', users);
+router.use('/api/profile', profile);
+router.use('/api/posts', posts);
 
 // 配置路由
 app.use(router.routes()).use(router.allowedMethods());
