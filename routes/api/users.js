@@ -102,7 +102,7 @@ router.post('/login', async (ctx) => {
 				avatar: user.avatar,
 			};
 			const token = jwt.sign(payload, keys.secretOrKey, {
-				expiresIn: 3600,
+				expiresIn: 86400,
 			});
 			ctx.status = 200;
 			ctx.body = { success: true, token: 'Bearer ' + token };
