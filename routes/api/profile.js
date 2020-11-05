@@ -33,7 +33,7 @@ router.get(
 		}).populate('user', ['name', 'avatar']);
 		if (profile.length) {
 			ctx.status = 200;
-			ctx.body = profile;
+			ctx.body = profile[0];
 		} else {
 			ctx.status = 404;
 			ctx.body = { noprofile: '该用户没有任何相关个人信息' };
