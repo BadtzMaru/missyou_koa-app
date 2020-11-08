@@ -202,6 +202,12 @@ router.post(
 	'/comment',
 	passport.authenticate('jwt', { session: false }),
 	async (ctx) => {
+		const { errors, isValid } = validatePostInput(ctx.request.body);
+		if (!isValid) {
+			ctx.status = 400;
+			ctx.body = errors;
+			return;
+		}
 		const id = ctx.query.id;
 		const post = await Post.findById(id);
 		const newComment = {
